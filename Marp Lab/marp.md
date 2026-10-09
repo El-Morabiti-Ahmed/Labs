@@ -4,7 +4,7 @@ marp: true
 # 3 themes gaia , uncover , default
 theme: uncover
 # to add somthing add the end of all slides
-footer: oussama
+footer: Ahmed
 # to show numbers of slides
 paginate: true
 ---

@@ -1,6 +1,7 @@
 ---
 marp: true
 theme: default
+math: mathjax
 paginate: true
 header: 'Git & GitHub Fundamentals'
 footer: 'Best Practices for Project Integration'

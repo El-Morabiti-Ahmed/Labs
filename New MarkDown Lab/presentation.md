@@ -15,15 +15,15 @@ List video games and save them in a JSON file
 ## Technologies
 - Frontend
     - HTML
-    - TailWind CSS
-    - Vanilla JavaScript
+    - Tailwind CSS
+    - Vanilla Javascript
 - Backend
     - Vanilla Object Oriented PHP
     - JSON file
 
 ---
 
-## Developement steps
+## Development steps
 1. Create the HTML structure
 2. Style the HTML with TailWind CSS
 3. Create the 3 PHP classes
@@ -38,7 +38,7 @@ List video games and save them in a JSON file
 ## Task List
 - [x] Create the Interface
 - [x] Create the PHP
-- [] Create the Javscript
+- [ ] Create the Javscript
 
 ---
 

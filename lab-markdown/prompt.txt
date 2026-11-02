@@ -1,0 +1,55 @@
+Create a Markdown (`.md`) documentation file for my technical project.
+
+Follow this exact structure and keep the writing style similar to a technical project report written by a programming student.
+
+## Required Structure
+
+1. **Introduction**
+   - Briefly explain what the project is.
+   - Mention its main technical approach and how its components interact.
+2. **Objective**
+   - Clearly state the project's primary purpose in one or two sentences.
+3. **Functionality**
+   - List the main features of the application using bullet points.
+   - Describe what the user can do and how the application responds.
+4. **Technologies**
+   - Separate technologies into Frontend and Backend.
+   - List the languages, frameworks, libraries, and storage solutions used.
+5. **Development Steps**
+   - Provide an ordered list describing the main development phases.
+   - Keep the steps chronological and focused on implementation.
+6. **Task List**
+   - Create a Markdown checklist (`- [x]` and `- [ ]`) showing completed and pending tasks.
+   - Only mark tasks as completed when explicitly confirmed.
+7. **Architecture**
+   - Create a Markdown table with two columns:
+     - Component
+     - Responsibility
+   - Explain the purpose of each major file, class, or component.
+8. **Code Example**
+   - Include a relevant code snippet from the actual project.
+   - Use the appropriate Markdown code fence and language identifier.
+   - Briefly explain the code if necessary.
+   - Do not invent code or silently correct the supplied implementation.
+9. **Resources**
+   - Include links to the project's source code, screenshots, or other relevant resources.
+   - Use Markdown links.
+10. **Conclusion**
+    - Write a short paragraph explaining what the project demonstrates and what programming concepts it helped practice.
+
+## Writing Guidelines
+
+- Use clear, straightforward technical English.
+- Maintain a professional but natural student-written tone.
+- Keep explanations concise and avoid unnecessary technical jargon.
+- Use Markdown syntax correctly.
+- Use `##` for section headings.
+- Preserve technical accuracy: never invent features, technologies, files, or implementation details.
+- Avoid exaggerated claims or marketing language.
+- Do not write a tutorial; document the actual project.
+
+##
+
+
+
+I have included the entire project source code as a zip file

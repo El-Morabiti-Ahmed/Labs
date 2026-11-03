@@ -1,0 +1,47 @@
+Dans ce Lab, vous découvrez les Labs et la stack technique du projet technique.
+
+Vous apprenez pourquoi faire un Lab et comment il aide à découvrir un outil, tester une solution et réaliser une partie du projet.
+
+Vous identifiez les langages, les frameworks et les outils utilisés dans le projet.
+
+Plan  Plan de présentation — 5 Slides
+
+
+
+Slide 1 — Page de garde
+
+Slide 2 — Projet technique
+
+Slide 3 — Stack technique
+
+Slide 4 — Comprendre les Labs
+
+- C'est quoi un Lab ?
+
+- Pourquoi réaliser des Labs ?
+
+- Quel est le lien avec le projet technique ?
+
+Slide 5 — Liste des Labs
+
+- Liste des Labs à réaliser
+
+Créez cette présentation avec deux images au début de la première diapositive.
+
+Mon projet technique est un portail e-sport qui permet d'ajouter des jeux dans un tableau. Un bouton affiche un formulaire où l'utilisateur entre le nom du jeu et sa plateforme.
+
+Les données sont enregistrées dans un fichier JSON, puis récupérées pour remplir le tableau.
+
+Le projet utilise trois classes PHP : games.php, gameManager.php et gameController.php. JavaScript est utilisé pour récupérer les données et remplir le tableau.
+
+Il y a aussi un bouton « Enregistrer » qui affiche « Enregistrement… » pendant l'envoi des données. Une notification informe l'utilisateur si l'enregistrement a réussi ou non.
+
+Ajoutez les noms suivants :
+
+Étudiant : Ahmed El Morabiti
+
+Encadrant : ES-Saraj Fouad
+
+La présentation doit être en français, au format Marp, avec un style moderne et professionnel.
+
+Le résultat final doit être un fichier Markdown (.md).

@@ -1,1 +1,1 @@
-Effectuez la tâche décrite dans TASK.md en utilisant les informations contenues dans TECHNICAL_PROJECT.md et en respectant les règles énoncées dans RULES.md.
+Effectuez la tâche décrite dans /TASK.md en respectant les règles énoncées dans ../../.agents/RULES.md

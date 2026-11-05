@@ -7,7 +7,7 @@ style: |
   @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
   section {
-    background: #d8808a;
+    background: #70020f;
     color: #ffe0e3;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 26px;
@@ -38,13 +38,13 @@ style: |
 
   section.light {
     background: #ffdde0;
-    color: #0629ef;
+    color: #70020f;
   }
 
   section.light h1,
   section.light h2,
   section.light h3 {
-    color: #2882f1;
+    color: #70020f;
   }
 
   section.light p,
@@ -121,7 +121,6 @@ style: |
   .small {
     font-size: 21px;
     line-height: 1.35;
-
     text-transform: none;
   }
 
@@ -138,118 +137,79 @@ style: |
 
 <!-- _class: title -->
 
-# Development<br>Environment
+# Environnement de<br>Développement
 
 <div class="by">
-  <strong></strong>
-
-encadre:essarraj-fouad 
+  <strong>Mohammed Yassir Mesbahi</strong>
+  Encadrant : ES-SARRAJ Fouad
 </div>
-
----
-
-
-
-<!-- _class: light -->
-
-## Lab Plan
-
-1. Introduction
-2. Problems Encountered During the Lab
-3. Solutions Implemented:
-   - Showing hidden files and folders
-   - Making `README.md` visible
-   - Using Todo Highlight for code reminders
-   - Installing and using Live Server
-   - Configuring Marp Markdown Preview
-4. Understanding IDEs and Why We Use Them
-
----
-
-
----
-
-## Problems Encountered
-
-- Hidden files and folders, such as `.git`, were not visible in the file explorer.
-- The `README.md` file was not displayed as expected.
-- We sometimes forgot which lines of code needed to be modified.
-- Marp presentation files did not open in the expected preview.
 
 ---
 
 <!-- _class: light -->
 
-## Solutions Implemented
+## Plan de Présentation
 
-### 01 — Show hidden files
-
-Enabled the relevant file-explorer setting so hidden files and folders, including `.git`, could be seen.
-
-### 02 — Display README.md
-
-Adjusted the relevant VS Code option/extension setting so `README.md` appeared in the explorer.
-
-### 03 — Remember code changes
-
-Installed **Todo Highlight** to highlight important comments and reminders in the code.
+1. Introduction & Stack Technique
+2. Définitions
+3. Problème
+4. Solution
 
 ---
-<!-- TODO: -->
-<!-- _class: light -->
 
-## Solutions Implemented
+## 🛠️ Stack Technique
 
-### 04 — Preview web pages
+Outils et écosystème de l'environnement de développement :
 
-Installed **Live Server** to launch a local development server and automatically refresh web pages after changes.
-
-### 05 — Preview Marp slides
-
-Installed/configured the **Marp extension** so Markdown presentation files could be viewed in slide preview.
-## 05- Meaning of IDE and why we use it
+- **VS Code** : Éditeur de code source et environnement de travail principal
+- **Live Server** : Serveur de développement local avec rechargement automatique en direct
+- **Marp for VS Code** : Extension de prévisualisation et compilation de présentations Markdown
+- **Todo Highlight** : Extension de surbrillance pour les annotations et rappels (`TODO:`, `FIXME:`)
+- **Explorateur Système & Git** : Gestion de l'arborescence, fichiers cachés et contrôle de version
 
 ---
 
 <!-- _class: light -->
 
-## 07 — What Is an IDE?
+## 📖 Définitions
 
-An **IDE (Integrated Development Environment)** is a software application that helps developers write, run, test, and debug code in one place.
-
-### Why do we use an IDE?
-
-- **Code Editor:** Write and edit source code.
-- **Terminal:** Execute commands without leaving the IDE.
-- **Debugger:** Find and fix errors in the code.
-- **Extensions:** Add useful tools and features.
-- **File Explorer:** Organize project files and folders.
-- **Git Integration:** Track changes and manage versions.
+- **IDE (Integrated Development Environment)** : Application logicielle unifiant éditeur de code, terminal, débogueur et gestionnaire d'extensions au même endroit.
+- **Fichiers cachés (`.git`, dotfiles)** : Fichiers ou répertoires système masqués par défaut pour protéger les configurations sensibles.
+- **Serveur de développement local** : Serveur HTTP local actualisant automatiquement la page web dans le navigateur à chaque sauvegarde.
+- **Extension VS Code** : Module complémentaire étendant les fonctionnalités natives de l'éditeur.
 
 ---
 
-## Examples of IDEs and Code Editors
+## ⚠️ Problème
 
-<div class="cols">
+Obstacles rencontrés lors de la mise en place initiale du poste de travail :
 
-<div class="col">
+- **Fichiers cachés invisibles** : Les fichiers et dossiers critiques comme `.git` n'apparaissaient pas dans l'explorateur.
+- **Fichier `README.md` non affiché** : Absence d'accès immédiat à la documentation du projet.
+- **Oubli des modifications dans le code** : Difficulté à repérer visuellement les tâches et lignes à modifier.
+- **Absence de prévisualisation** : Impossibilité de visualiser en temps réel les pages web et les diaporamas Marp.
 
-Visual Studio Code
+---
 
-Flexible, lightweight, and customizable with extensions.
+<!-- _class: light -->
 
-</div>
+## 💡 Solution : Configuration & Outillage
 
-<div class="col">
+### 01 — Affichage des fichiers cachés
+Activation de l'option d'affichage des fichiers et dossiers masqués pour visualiser `.git` et les dotfiles.
 
-JetBrains IDEs
+### 02 — Visibilité du README.md
+Configuration de l'arborescence VS Code pour garantir l'affichage permanent du fichier `README.md`.
 
-PyCharm, IntelliJ IDEA, and PhpStorm provide specialized development tools.
+### 03 — Rappels visuels avec Todo Highlight
+Installation de **Todo Highlight** pour repérer instantanément les commentaires importants dans le code.
 
-</div>
+---
 
-</div>
+## 💡 Solution : Serveur & Rendu Marp
 
-### Remember
+### 04 — Serveur local avec Live Server
+Installation de **Live Server** pour lancer un serveur local avec rechargement à chaud à chaque sauvegarde de fichier.
 
-**An IDE helps developers work faster, stay organized, and solve problems more easily.**
+### 05 — Prévisualisation des diapositives avec Marp
+Installation et configuration de l'extension **Marp for VS Code** pour afficher immédiatement le rendu des diaporamas Markdown.

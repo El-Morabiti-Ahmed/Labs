@@ -1,0 +1,1 @@
+Effectuez la tâche décrite dans /TASK.md en respectant les règles énoncées dans ../../.agents/RULES.md

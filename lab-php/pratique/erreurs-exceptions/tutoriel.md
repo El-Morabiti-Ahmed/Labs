@@ -14,7 +14,7 @@ Dans `exemple.php` :
 4. Le bloc `try` appelle la méthode d’abord avec un nom connu, puis avec un nom absent.
 5. Le `catch (RuntimeException $exception)` intercepte l’exception et affiche son message. Le programme ne termine donc pas sur une erreur non traitée.
 
-## Lancer depuis `lab-php/erreurs-exceptions`
+## Lancer depuis `lab-php/pratique/erreurs-exceptions`
 
 ```bash
 php exemple.php

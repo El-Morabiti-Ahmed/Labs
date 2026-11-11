@@ -12,7 +12,7 @@ Vérifier que PHP en ligne de commande fonctionne avant les exercices. L’envir
 2. `echo` écrit le texte dans la sortie standard.
 3. `PHP_EOL` ajoute le caractère de fin de ligne adapté au système.
 
-## Lancer depuis `lab-php/quick-start`
+## Lancer depuis `lab-php/pratique/quick-start`
 
 ```bash
 php -v

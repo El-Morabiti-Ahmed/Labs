@@ -13,7 +13,7 @@ Dans `exemple.php` :
 3. Chaque classe appelle `$this->writeActivity(...)` avec un texte adapté à son action.
 4. Les deux objets sont créés et exécutés à la fin du fichier, ce qui rend le partage visible.
 
-## Lancer depuis `lab-php/traits`
+## Lancer depuis `lab-php/pratique/traits`
 
 ```bash
 php exemple.php

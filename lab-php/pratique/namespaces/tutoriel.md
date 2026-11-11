@@ -13,7 +13,7 @@ Dans `exemple.php` :
 3. Le bloc global `namespace { ... }` instancie les classes avec leur nom complet, préfixé par `\`.
 4. Chaque objet renvoie son propre libellé ; les deux noms courts identiques ne créent aucun conflit.
 
-## Lancer depuis `lab-php/namespaces`
+## Lancer depuis `lab-php/pratique/namespaces`
 
 ```bash
 php exemple.php

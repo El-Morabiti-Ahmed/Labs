@@ -3,258 +3,141 @@ marp: true
 theme: default
 paginate: true
 lang: fr-FR
+title: lab-php — notions PHP
 style: |
   section {
-    background: #0b1020;
-    color: #e5e7eb;
-    font-family: Arial, sans-serif;
-    padding: 48px 64px;
-    font-size: 22px;
+    font-family: "Aptos", "Arial", sans-serif;
+    color: #17233b;
+    background: linear-gradient(135deg, #f7f9fc 0%, #edf3fb 100%);
+    padding: 52px 64px;
   }
-  h1 { color: #fff; border-bottom: 3px solid #38bdf8; padding-bottom: 10px; }
-  h2 { color: #7dd3fc; }
-  strong { color: #7dd3fc; }
-  code { background: #17243d; color: #bae6fd; }
-  pre { background: #111a2e; border: 1px solid #263854; border-radius: 10px; }
-  table { width: 100%; border-collapse: collapse; }
-  th { background: #075985; color: white; }
-  td, th { border: 1px solid #334155; padding: 9px; }
-  blockquote { border-left: 5px solid #38bdf8; color: #cbd5e1; background: #111a2e; padding: 10px 18px; }
-  .center { text-align: center; }
-  .muted { color: #94a3b8; }
-  .tag { color: #7dd3fc; letter-spacing: 2px; font-size: 15px; }
+  h1, h2 { color: #123b68; }
+  h1 { font-size: 1.75em; }
+  h2 { border-bottom: 3px solid #21a6a1; padding-bottom: 8px; }
+  strong { color: #087e79; }
+  code { color: #087e79; }
+  table { font-size: 0.8em; }
+  th { background: #123b68; color: white; }
+  td, th { padding: 8px 12px; }
+  blockquote { border-left: 5px solid #21a6a1; color: #34445d; }
 ---
 
-<!-- _class: center -->
+<!-- _paginate: false -->
 
-<div style="display:flex; justify-content:center; align-items:center; gap:36px; margin: 12px 0 30px;">
-  <img src="images/ofppt.png"><img src="images/solicode.png">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:28px">
+<img src="images/ofppt.png" height="72" alt="Logo OFPPT"><img src="images/solicode.png" height="72" alt="Logo Solic ode">
 </div>
 
-<div class="tag">LAB PHP · PROGRAMMATION ORIENTÉE OBJET</div>
+# lab-php
 
-# Rendre le portail e-sport plus fiable
-
-## Exceptions · namespaces · traits
+### Erreurs, namespaces et traits
 
 **Présenté par** : Ahmed El Morabiti  
-**Encadré par** : ES-SARRAJ FOUAD
-
-<!-- Note du présentateur : Cette présentation montre trois outils PHP qui rendent le portail e-sport plus clair et plus robuste. -->
+**Encadré par** : ES-Saraj Fouad
 
 ---
 
-# Notre parcours
+## Parcours de la présentation
 
-<div class="tag">DU BESOIN AUX EXEMPLES</div>
-
-1. Situer les défis du portail e-sport.
-2. Détecter et traiter les erreurs avec les exceptions.
-3. Organiser les classes avec les namespaces.
-4. Partager des méthodes avec les traits.
-5. Relier les trois notions dans un flux d'ajout.
-
-<!-- Note du présentateur : Nous partirons du fonctionnement du portail avant d'appliquer chaque notion à son traitement PHP. -->
+1. Introduction et stack technique
+2. Définitions des notions PHP
+3. Problème rencontré dans le projet
+4. Solution et démonstrations pratiques
 
 ---
 
-# Le contexte : ajouter un jeu
+## 1. Introduction & Stack Technique
 
-Le navigateur envoie un nom et une plateforme à l'API PHP, qui valide les données et les ajoute au fichier JSON.
+- Ce lab permet de découvrir trois notions PHP non encore étudiées en cours.
+- **PHP 8.5.10 CLI** est disponible dans l’environnement vérifié.
+- Les exemples utilisent PHP en ligne de commande, sans dépendance externe.
+- Le cas concret sera relié au projet après précision du problème et de la solution par l’étudiant.
 
-<div style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:30px; text-align:center;">
-  <div style="background:#111a2e; padding:18px; border-radius:10px; flex:1">Formulaire</div>
-  <span style="color:#38bdf8">→</span>
-  <div style="background:#111a2e; padding:18px; border-radius:10px; flex:1">API PHP</div>
-  <span style="color:#38bdf8">→</span>
-  <div style="background:#111a2e; padding:18px; border-radius:10px; flex:1">Classes métier</div>
-  <span style="color:#38bdf8">→</span>
-  <div style="background:#111a2e; padding:18px; border-radius:10px; flex:1">games.json</div>
-</div>
+### Quick Start
 
-**Défis :** données invalides, classes difficiles à distinguer et logique répétée.
-
-<!-- Note du présentateur : Une requête d'ajout traverse l'API, les classes métier et le stockage JSON, ce qui crée plusieurs points à sécuriser. -->
+```bash
+php -v
+php hello.php
+```
 
 ---
 
-# 1 — Gérer les erreurs
+## Hello World exécutable
 
-<div class="tag">EXCEPTIONS</div>
-
-Une exception signale une situation anormale qu'une méthode ne peut pas traiter normalement.
-
-| Mot-clé | Rôle |
-|---|---|
-| `throw` | Signaler un problème en lançant une exception |
-| `try` | Encadrer le code susceptible d'échouer |
-| `catch` | Intercepter et traiter une exception |
-| `finally` | Exécuter un nettoyage, qu'il y ait eu une erreur ou non |
-
-**À distinguer :** une exception est un mécanisme de contrôle ; une erreur PHP peut aussi être un problème de programmation ou d'exécution.
-
-<!-- Note du présentateur : Les exceptions permettent de transmettre un échec jusqu'au niveau capable de répondre proprement à la requête. -->
-
----
-
-# Exemple — valider les données du jeu
+Créer `hello.php` :
 
 ```php
-function validateGame(string $name, string $platform): void
-{
-    if (trim($name) === '' || trim($platform) === '') {
-        throw new InvalidArgumentException(
-            'Le nom et la plateforme sont obligatoires.'
-        );
-    }
-}
+<?php
+echo "Bonjour, PHP !\n";
+```
 
+Lancer depuis le dossier du fichier :
+
+```bash
+php hello.php
+```
+
+**Résultat attendu :** `Bonjour, PHP !`
+
+---
+
+## 2. Définitions — erreurs et exceptions
+
+- Une **erreur** signale un problème pendant l’exécution du programme.
+- Une **exception** représente une situation anormale que le code peut intercepter et traiter.
+- `try` contient le code à surveiller ; `catch` décrit la réponse si une exception survient.
+
+```php
+<?php
 try {
-    validateGame($name, $platform);
-    $manager->add(new Game($name, $platform));
-} catch (InvalidArgumentException $e) {
-    http_response_code(400);
-    echo json_encode(['error' => $e->getMessage()]);
+    throw new RuntimeException("Donnée indisponible");
+} catch (RuntimeException $exception) {
+    echo "Impossible de continuer : {$exception->getMessage()}\n";
 }
 ```
-
-**Résultat :** les champs manquants produisent une réponse HTTP 400 au lieu d'un enregistrement invalide.
-
-<!-- Note du présentateur : La validation lance une exception en cas de champs vides et le contrôleur transforme ce cas en réponse HTTP compréhensible. -->
 
 ---
 
-# 2 — Organiser les classes
+## 2. Définitions — namespace et trait
 
-<div class="tag">NAMESPACES</div>
-
-Un namespace donne un espace de noms aux classes, interfaces, fonctions et constantes afin d'éviter les collisions et de rendre leur origine lisible.
-
-```php
-namespace App\Models;
-
-class Game
-{
-    public function __construct(
-        public string $name,
-        public string $platform
-    ) {}
-}
-```
-
-On peut alors distinguer `App\Models\Game` d'une autre classe `Game` définie dans un autre espace.
-
-<!-- Note du présentateur : Le namespace App Models indique clairement que cette classe Game appartient aux modèles du portail. -->
-
----
-
-# Utiliser les namespaces dans le portail
-
-```php
-// backend/classes/GameManager.php
-namespace App\Repositories;
-
-use App\Models\Game;
-
-class GameManager
-{
-    public function add(Game $game): void
-    {
-        // Ajouter le jeu au stockage JSON.
-    }
-}
-```
-
-```php
-// backend/api.php
-use App\Models\Game;
-use App\Repositories\GameManager;
-```
-
-**Organisation possible :** `App\Models`, `App\Repositories` et `App\Controllers` reflètent les responsabilités du code.
-
-<!-- Note du présentateur : Les instructions namespace et use rendent les dépendances de GameManager et de l'API explicites. -->
-
----
-
-# 3 — Partager du code
-
-<div class="tag">TRAITS</div>
-
-Un trait regroupe des méthodes réutilisables qu'une classe peut intégrer avec `use` ; il ne remplace ni une classe parente ni une interface.
-
-```php
-trait JsonResponse
-{
-    private function sendJson(array $data, int $status = 200): void
-    {
-        http_response_code($status);
-        header('Content-Type: application/json; charset=utf-8');
-        echo json_encode($data, JSON_UNESCAPED_UNICODE);
-    }
-}
-```
-
-Le trait convient à un petit comportement commun, par exemple formater les réponses JSON de plusieurs contrôleurs.
-
-<!-- Note du présentateur : Un trait permet à plusieurs contrôleurs de réutiliser la même méthode de réponse JSON sans copier son code. -->
-
----
-
-# Exemple — réutiliser la réponse JSON
-
-```php
-namespace App\Controllers;
-
-trait JsonResponse
-{
-    private function sendJson(array $data, int $status = 200): void
-    {
-        http_response_code($status);
-        header('Content-Type: application/json; charset=utf-8');
-        echo json_encode($data, JSON_UNESCAPED_UNICODE);
-    }
-}
-
-class GameController
-{
-    use JsonResponse;
-
-    public function created(Game $game): void
-    {
-        $this->sendJson(['game' => $game], 201);
-    }
-}
-```
-
-<!-- Note du présentateur : GameController compose le trait pour répondre avec le même format JSON que les autres contrôleurs. -->
-
----
-
-# Relier les trois notions
-
-| Notion | Application dans le portail | Bénéfice |
+| Notion | Rôle | Exemple concret |
 |---|---|---|
-| Exceptions | Rejeter les champs invalides ou signaler un échec de lecture JSON | Réponse contrôlée |
-| Namespaces | Séparer `Models`, `Repositories` et `Controllers` | Classes faciles à repérer |
-| Traits | Mutualiser la réponse JSON | Moins de duplication |
+| **Namespace** | Organiser les classes et éviter les noms identiques | `App\Models\Game` et `App\Services\Game` |
+| **Trait** | Réutiliser des méthodes dans plusieurs classes | Un trait `WritesLog` partagé par deux services |
 
-**Parcours d'une requête :** l'API crée `App\Controllers\GameController`, le contrôleur valide les données, le dépôt enregistre le jeu et une réponse JSON est renvoyée.
-
-<!-- Note du présentateur : Les trois outils se complètent en organisant les responsabilités, en gérant les échecs et en partageant un comportement transversal. -->
+Un trait complète une classe : il ne remplace ni une classe ni un objet.
 
 ---
 
-# À retenir
+## 3. Problème
 
-<div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:28px;">
-  <div style="background:#111a2e; padding:20px; border-top:4px solid #38bdf8; border-radius:8px"><strong>Exceptions</strong><br><span class="muted">Réagir aux situations anormales</span></div>
-  <div style="background:#111a2e; padding:20px; border-top:4px solid #38bdf8; border-radius:8px"><strong>Namespaces</strong><br><span class="muted">Donner une organisation aux noms</span></div>
-  <div style="background:#111a2e; padding:20px; border-top:4px solid #38bdf8; border-radius:8px"><strong>Traits</strong><br><span class="muted">Réutiliser un comportement ciblé</span></div>
-</div>
+### À compléter avec l’expérience de l’étudiant
 
-## Prochaine étape
+- **Quel problème concret rencontrez-vous dans le projet technique ?**
+- **Dans quelle partie du projet apparaît-il ?**
+- **Quel est son impact observable ?**
 
-Appliquer ces conventions aux classes réelles de l'API, puis vérifier les réponses en cas de succès et d'échec.
+> Ne pas présenter une hypothèse comme un problème réellement rencontré.
 
-<!-- Note du présentateur : Dans le portail, ces notions améliorent ensemble la fiabilité, la lisibilité et la réutilisation du code PHP. -->
+---
+
+## 4. Solution proposée et démonstrations
+
+### À compléter avec la proposition de l’étudiant
+
+- **Quelle solution proposez-vous ?**
+- **Comment les erreurs/exceptions, namespaces ou traits y contribuent-ils ?**
+- **Quel résultat permettra de vérifier que la solution fonctionne ?**
+
+---
+
+## Démonstrations PHP à rattacher au projet
+
+Préparer un exemple progressif à partir du problème réel :
+
+1. Organiser les classes utiles dans un namespace clair.
+2. Ajouter un trait uniquement si plusieurs classes partagent réellement une méthode.
+3. Déclencher une exception sur un cas d’échec pertinent et la traiter proprement.
+4. Lancer l’exemple avec PHP et montrer le résultat attendu, y compris le cas d’échec.
+
+**Fil conducteur et code final :** à compléter une fois le problème et la solution fournis.

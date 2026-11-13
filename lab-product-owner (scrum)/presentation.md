@@ -1,4 +1,4 @@
----
+﻿---
 marp: true
 theme: default
 paginate: true
@@ -9,13 +9,13 @@ style: |
     font-family: 'Arial', sans-serif;
     background: #f8fafc;
     color: #263445;
-    padding: 48px 65px;
-    font-size: 23px;
+    padding: 42px 56px;
+    font-size: 13px;
   }
 
   h1 {
     color: #17324d;
-    font-size: 2.1em;
+    font-size: 1.8em;
     font-weight: 700;
     border-bottom: 3px solid #527b9e;
     padding-bottom: 12px;
@@ -23,7 +23,7 @@ style: |
 
   h2 {
     color: #17324d;
-    font-size: 1.45em;
+    font-size: 1.25em;
   }
 
   strong {
@@ -31,11 +31,11 @@ style: |
   }
 
   ul {
-    line-height: 1.5;
+    line-height: 1.35;
   }
 
   li {
-    margin-bottom: 9px;
+    margin-bottom: 6px;
   }
 
   section.title-slide {
@@ -46,7 +46,7 @@ style: |
 
   section.title-slide h1 {
     color: #ffffff;
-    font-size: 2.4em;
+    font-size: 2em;
     border-bottom: 3px solid #91b5d1;
   }
 
@@ -69,8 +69,8 @@ style: |
 
   .authors {
     margin-top: 38px;
-    font-size: 19px;
-    line-height: 1.9;
+    font-size: 13px;
+    line-height: 1.6;
   }
 
   .note {
@@ -91,7 +91,7 @@ style: |
 
   table {
     width: 100%;
-    font-size: 18px;
+    font-size: 16px;
     border-collapse: collapse;
   }
 
@@ -101,7 +101,7 @@ style: |
   }
 
   td, th {
-    padding: 10px;
+    padding: 7px;
     border: 1px solid #d5dde5;
   }
 
@@ -131,8 +131,7 @@ style: |
 
 </div>
 
-<div class="note">Note : Cette présentation explique comment le Product Owner aide une équipe Scrum à créer un produit qui répond réellement aux besoins des utilisateurs.</div>
-
+<!-- Note : Cette présentation explique comment le Product Owner aide une équipe Scrum à créer un produit qui répond réellement aux besoins des utilisateurs. -->
 ---
 
 # 1. Introduction à Scrum
@@ -153,8 +152,7 @@ Il repose sur :
 | Scrum Master | S'assurer que Scrum est bien compris et appliqué |
 | Developers | Créer un produit utilisable |
 
-<div class="note">Note : Scrum organise le travail autour de trois responsabilités complémentaires qui permettent à l'équipe de progresser efficacement.</div>
-
+<!-- Note : Scrum organise le travail autour de trois responsabilités complémentaires qui permettent à l'équipe de progresser efficacement. -->
 ---
 
 # 2. Qu'est-ce qu'un Product Owner ?
@@ -176,8 +174,7 @@ Faire en sorte que le temps et les efforts de développement soient utilisés po
 
 **Important :** Le Product Owner n'est pas simplement un chef qui distribue des tâches, mais une personne responsable de la valeur du produit.
 
-<div class="note">Note : Le Product Owner prend les décisions liées à la valeur et à l'orientation du produit.</div>
-
+<!-- Note : Le Product Owner prend les décisions liées à la valeur et à l'orientation du produit. -->
 ---
 
 # 3. Quel problème le Product Owner résout-il ?
@@ -199,8 +196,7 @@ Les clients, les responsables et les développeurs peuvent avoir des attentes di
 ### 5. Perte de temps et de ressources
 L'équipe peut développer des fonctionnalités inutiles ou devoir refaire son travail.
 
-<div class="note">Note : Sans une direction claire, une équipe peut produire beaucoup de fonctionnalités sans réellement répondre au problème de l'utilisateur.</div>
-
+<!-- Note : Sans une direction claire, une équipe peut produire beaucoup de fonctionnalités sans réellement répondre au problème de l'utilisateur. -->
 ---
 
 # 4. Comment le Product Owner résout-il ces problèmes ?
@@ -223,8 +219,7 @@ Le Product Owner cherche à répondre à trois questions :
 - **Quoi ?** Quelles fonctionnalités sont importantes ?
 - **Quand ?** Dans quel ordre faut-il les développer ?
 
-<div class="note">Note : Le Product Owner transforme les besoins et les objectifs du produit en priorités compréhensibles pour toute l'équipe.</div>
-
+<!-- Note : Le Product Owner transforme les besoins et les objectifs du produit en priorités compréhensibles pour toute l'équipe. -->
 ---
 
 # 5. Les responsabilités principales
@@ -248,8 +243,7 @@ Il recueille les informations nécessaires pour prendre les meilleures décision
 
 **À retenir :** Le Product Owner peut déléguer certaines tâches, mais il reste responsable de leur bonne réalisation.
 
-<div class="note">Note : Ces responsabilités permettent au Product Owner de garder le produit organisé et orienté vers ses objectifs.</div>
-
+<!-- Note : Ces responsabilités permettent au Product Owner de garder le produit organisé et orienté vers ses objectifs. -->
 ---
 
 # 6. Le Product Backlog : son principal outil
@@ -275,8 +269,7 @@ Le Product Owner organise cette liste pour que l'équipe commence par les élém
 
 **Le backlog évolue régulièrement** en fonction des retours et des changements de besoins.
 
-<div class="note">Note : Le Product Backlog permet au Product Owner de transformer les objectifs du produit en éléments de travail organisés.</div>
-
+<!-- Note : Le Product Backlog permet au Product Owner de transformer les objectifs du produit en éléments de travail organisés. -->
 ---
 
 # 7. Le Product Owner pendant les événements Scrum
@@ -297,8 +290,7 @@ Il participe à la réflexion de l'équipe sur les améliorations possibles de s
 
 **Important :** Le Product Owner n'est pas le responsable de toutes les réunions ; chaque événement possède son propre objectif.
 
-<div class="note">Note : La participation du Product Owner aux événements Scrum favorise la communication et permet d'adapter le produit régulièrement.</div>
-
+<!-- Note : La participation du Product Owner aux événements Scrum favorise la communication et permet d'adapter le produit régulièrement. -->
 ---
 
 # 8. La relation avec les autres acteurs
@@ -321,8 +313,7 @@ Il travaille avec les Developers pour transformer les besoins en fonctionnalité
 
 Il ne commande pas les développeurs : les Developers s'organisent eux-mêmes pour réaliser le travail.
 
-<div class="note">Note : Une bonne collaboration entre le Product Owner et les autres acteurs permet d'éviter les malentendus et les mauvaises décisions.</div>
-
+<!-- Note : Une bonne collaboration entre le Product Owner et les autres acteurs permet d'éviter les malentendus et les mauvaises décisions. -->
 ---
 
 # 9. Exemple pratique : une application de gestion de tâches
@@ -352,8 +343,7 @@ L'équipe ne peut pas tout développer en même temps.
 
 L'équipe développe d'abord une version utile de l'application, puis l'améliore progressivement.
 
-<div class="note">Note : Cet exemple montre comment le Product Owner aide l'équipe à éviter de perdre du temps sur des fonctionnalités moins importantes.</div>
-
+<!-- Note : Cet exemple montre comment le Product Owner aide l'équipe à éviter de perdre du temps sur des fonctionnalités moins importantes. -->
 ---
 
 # 10. Les qualités d'un bon Product Owner
@@ -371,8 +361,7 @@ Pour bien remplir son rôle, un Product Owner doit posséder plusieurs qualités
 
 Savoir dire non à certaines demandes pour protéger les objectifs et la valeur du produit.
 
-<div class="note">Note : Un bon Product Owner doit savoir écouter les autres tout en prenant des décisions cohérentes avec les objectifs du produit.</div>
-
+<!-- Note : Un bon Product Owner doit savoir écouter les autres tout en prenant des décisions cohérentes avec les objectifs du produit. -->
 ---
 
 # 11. Les erreurs à éviter
@@ -391,8 +380,7 @@ Même avec un Product Owner, certains problèmes peuvent apparaître si son rôl
 
 Le Product Owner doit prendre des décisions réfléchies, maintenir une communication régulière et protéger la vision du produit.
 
-<div class="note">Note : Éviter ces erreurs permet au Product Owner de conserver la confiance de l'équipe et de maintenir une direction cohérente.</div>
-
+<!-- Note : Éviter ces erreurs permet au Product Owner de conserver la confiance de l'équipe et de maintenir une direction cohérente. -->
 ---
 
 # 12. Conclusion
@@ -412,4 +400,8 @@ Il permet de :
 
 **Merci pour votre attention !**
 
-<div class="note">Note : Le succès d'un produit Scrum dépend notamment de la capacité du Product Owner à maintenir une vision claire et à maximiser la valeur créée.</div>
+<!-- Note : Le succès d'un produit Scrum dépend notamment de la capacité du Product Owner à maintenir une vision claire et à maximiser la valeur créée. -->
+
+
+
+
